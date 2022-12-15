@@ -3,20 +3,6 @@ library(tidyverse)
 # The functions might be useful for A4
 source("../source/a4-helpers.R")
 
-## Test queries ----
-#----------------------------------------------------------------------------#
-# Simple queries for basic testing
-#----------------------------------------------------------------------------#
-# Return a simple string
-test_query1 <- function() {
-  return ("Hello world")
-}
-
-# Return a vector of numbers
-test_query2 <- function(num=6) {
-  v <- seq(1:num)
-  return(v)
-}
 
 ## Section 2  ---- 
 #----------------------------------------------------------------------------#
@@ -28,18 +14,21 @@ test_query2 <- function(num=6) {
 # Growth of the U.S. Prison Population
 # Your functions might go here ... <todo:  update comment>
 #----------------------------------------------------------------------------#
-# This function ... <todo:  update comment>
+# This function gets the jail population for year
 get_year_jail_pop <- function() {
-  # TODO: Implement this function 
-return()   
+  df <- get_data()
+  year_df <- aggregate(x=df$total_pop, by = list(year=df$year), FUN=sum)
+  return(year_df)
 }
 
-# This function ... <todo:  update comment>
-plot_jail_pop_for_us <- function()  {
-  # TODO: Implement this function 
-  return()   
-} 
-
+# This function plots a bar graph for jail pop vs. year 
+plot_jail_pop_for_us <- function() {
+  # get df for US data 
+  year_df <- get_year_jail_pop()
+  p <- ggplot(data=year_df, mapping=aes(x=year, y=x)) + geom_bar(stat="identity")
+  
+  return(p)
+}
 ## Section 4  ---- 
 #----------------------------------------------------------------------------#
 # Growth of Prison Population by State 

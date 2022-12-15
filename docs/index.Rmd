@@ -1,45 +1,69 @@
 ---
-title: "Your A4 Report Title (TODO: Revise title)"
-author: "Your Name"
-date: '2022-11-01'
+title: "Assignment 4: Incarceration"
+author: "Karina Chan"
+date: '2022-12-11'
 output: html_document
 ---
 
 ```{r echo=FALSE, eval=TRUE, message=FALSE}
+# library(dplyr)
+# library(tidyverse)
+# library(knitr)
 source("../source/a4-helpers.R")
 source("../source/analysis.R")
 ```
 
 ## Abstract 
 [TODO: Include a short abstract (about 50 words)]
+In this report, I will be discussing the trends in jail population over the years, particularly from the 1970s to 2018 or 2021. I will be exploring the national growth of jail populations, then within states, and finally take a closer look at Washington state and observe a sample of the population. I will be observing the trends between inequity in the disproportionate minority population that are incarcerated versus their counterparts. 
 
-# Test (TODO: Remove before submission!!)
-```{r echo=FALSE}
-q1_string <- test_query1()
-num <- 5
-```
-As you know, this is a markdown report. The [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is **useful!**
-
-* Here's a test of a dynamic variable. Say **"`r q1_string`!!!** 
-* Here's another test. A vector
-of numbers: `r test_query2(num)`.
-
-Recall that _{r echo=TRUE}_ can be used to display the code, 
-which is very useful when developing and debugging a report. Here's an example: 
-
-```{r echo=TRUE}
-num <- 5
-sum <- sum(test_query2(num))
-print(sum)
-```
 
 ## Introduction 
-[TODO]
+[[[The social issues related to this data set (draw upon Data Feminism, along with your reading at the. The direct and indirect stakeholders that are impacted by research into this dataset. In this vein, what are the central values that you need to engage.
+The questions that you answer in your report.]]]
 
-## Data Summary 
-[TODO]
+There are several social issues deeply ingrained in the issue of mass incarceration, inlcluding, but not limited to racism, classism, and criminalization of offenders. This particularly affects minority groups and low-income areas, exacerbated by the negative stigma and systematic issues that keep the cycle of incarceration near impossible to get out of. In this report, this can be exemplified by the exponential increase in incarcerated individuals since 1970s (also after the defunding of rehabilitation programs) with a very slight decrease to plateau trend after the 2010s. This can be further highlighted through the population by state graphs that shows the trend for several states and the continual increases of incarcerated peoples over time. Additionaly, the inequity between marginalized groups like Black communities are disproportionately affected compare to their white counterparts. This is a dangerous trend that is attributed to the correlation between race and greater criminalization of Black communities, a direct stakeholder impacted by this research. Indirect stakeholders may be us, the audience, that must learn more about the inequity in mass incarceration and find ways to take action in changing the incarceration system and undoing unfair sentences.
 
-[TODO ... other sections ... See Canvas for details]
 
-_All the very best with your work!_
+### Data Summary
+[[[Write a paragraph of summary information, citing at least three values calculated from the data.  Your goal is to summarize some of the key variables that you are interested in. Report the values and explain why they are important; that is, how do the variables and value help you to understand patterns of inequality in the prison system.
+
+E.G. What is the average value of my variable across all the counties (in a given year)? 
+Where is my variable the highest or lowest?  
+How much has my variable change over the last N years?]]]
+
+
+## Growth of the U.S. Prison Population
+
+```{r prison_growth_population, echo = FALSE}
+source("../source/analysis.R")
+plot(plot_jail_pop_for_us())
+```
+
+This chart exemplifies the increase of the jail population since 1970 until 2018. This graph highlights the consistent jail population from 1970 to 1980s, under 200,000, then a sustained approximate 200,000 increase every decade until around 2010 where there was a 100,000 decrease from a cumulative 750,000 population -- the first decrease between 1970 to 2009. 
+
+## Growth of Prison Population by State
+
+<!-- ```{r growth_population_bystate, echo = FALSE}  -->
+<!-- source("") -->
+<!-- plot(type_of_chart) -->
+<!-- ``` -->
+
+
+## Incarceration population trend over time
+
+<!-- ```{r 1, echo = FALSE} -->
+<!-- source("") -->
+<!-- plot(type_of_chart) -->
+<!-- ``` -->
+
+
+
+## Incarceration population by race in King County
+
+<!-- ```{r something, echo = FALSE}  -->
+<!-- source("") -->
+<!-- plot(type_of_chart) -->
+<!-- ``` -->
+
 
