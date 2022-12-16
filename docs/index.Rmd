@@ -14,24 +14,17 @@ source("../source/analysis.R")
 ```
 
 ## Abstract 
-[TODO: Include a short abstract (about 50 words)]
 In this report, I will be discussing the trends in jail population over the years, particularly from the 1970s to 2018 or 2021. I will be exploring the national growth of jail populations, then within states, and finally take a closer look at Washington state and observe a sample of the population. I will be observing the trends between inequity in the disproportionate minority population that are incarcerated versus their counterparts. 
 
 
 ## Introduction 
-[[[The social issues related to this data set (draw upon Data Feminism, along with your reading at the. The direct and indirect stakeholders that are impacted by research into this dataset. In this vein, what are the central values that you need to engage.
-The questions that you answer in your report.]]]
 
 There are several social issues deeply ingrained in the issue of mass incarceration, inlcluding, but not limited to racism, classism, and criminalization of offenders. This particularly affects minority groups and low-income areas, exacerbated by the negative stigma and systematic issues that keep the cycle of incarceration near impossible to get out of. In this report, this can be exemplified by the exponential increase in incarcerated individuals since 1970s (also after the defunding of rehabilitation programs) with a very slight decrease to plateau trend after the 2010s. This can be further highlighted through the population by state graphs that shows the trend for several states and the continual increases of incarcerated peoples over time. Additionaly, the inequity between marginalized groups like Black communities are disproportionately affected compare to their white counterparts. This is a dangerous trend that is attributed to the correlation between race and greater criminalization of Black communities, a direct stakeholder impacted by this research. Indirect stakeholders may be us, the audience, that must learn more about the inequity in mass incarceration and find ways to take action in changing the incarceration system and undoing unfair sentences.
 
 
 ### Data Summary
-[[[Write a paragraph of summary information, citing at least three values calculated from the data.  Your goal is to summarize some of the key variables that you are interested in. Report the values and explain why they are important; that is, how do the variables and value help you to understand patterns of inequality in the prison system.
 
-E.G. What is the average value of my variable across all the counties (in a given year)? 
-Where is my variable the highest or lowest?  
-How much has my variable change over the last N years?]]]
-
+In the first dataset, with growth of the prison population, it can be seen that there is an increased trend of increased population of incarcerated people since 1980s that peaks in 2010, only dipping slightly until 2018. From this chart we can observe the trend of populations over time, an important value that helps audiences visualize the timeline of incarceration increases. This can be further examined with the growth of the prison population by state, which also analyzes the timeframe values in years, just on a more concentrated location scope within the west coast states. Here, we can see a similar trend in increased incarceration after 1980s and slight variations in increasing and decreasing populations. However, overall the population of incarcerated individuals are generally trending upward like the national population. In the incarceration of prisoners over time, the chart showcases the proportion of the population variable and takes a closer look into the white demographic population and their increased incarceration population. This showcases more the inequity between white populations jailed versus other ethnic groups, but still exemplify the increased jail populations. The greatest national jail population as of 2018 is 2008, with around 780,000 incarcerated individuals. Within the states over the years 1970 to 2018, the highest jail population was in California, with around 85,000 jailed individuals in 2008 and 2017, matching the 2008 year with the national highest. This shows that there is a mass incarceration issue within the U.S. particularly after the 1990s and continuous growth that peaked and 2008 and has potential for another peak in populations if there are no changes in legislation that reinforces mass incarceration. The population proportion of white individuals that are jailed versus the overall population proportion highlights inequities in who is jailed based on race. 
 
 ## Growth of the U.S. Prison Population
 
@@ -49,21 +42,23 @@ This chart exemplifies the increase of the jail population since 1970 until 2018
 print(plot_jail_pop_by_states(c("WA","OR","CA")))
 ```
 
+This chart exemplifies the growth in prison population from 1970 to around 2018, where there is a steady incline from 1980 across all three states California, Washington, and Oregon, with California having a steeper incline in jail population. Another trend to notice is that California has the highest population of incarcerated individuals by around 25,000 overall from 1970 to 1978 and 65,000 after 1990. This could be due to the larger overall population California has, but the spike increase was significant. I'm curious why there was a larger spike in population relative to the other states.
 
 ## Incarceration population trend over time
 
-```{r 1, echo = FALSE}
+```{r incarceration_population_bytime, echo = FALSE}
 # source("")
 print(plot_jail_props(2015)) # (choose your year to plot)
 ```
 
+In this chart, this shows the number of white individuals within the population versus the proportion in jail. The overall a population is more white-dominated, yet there’s still a disproportionate number of minorities in jail. 
 
 
 ## Incarceration population by race in King County
 
-<!-- ```{r something, echo = FALSE}  -->
-<!-- source("") -->
-<!-- plot(type_of_chart) -->
+<!-- ```{r incarceration_pop_byrace_KingCounty, echo = FALSE} -->
+<!-- # source("") -->
+<!-- print(plot_jail_props(2021)) -->
 <!-- ``` -->
 
 

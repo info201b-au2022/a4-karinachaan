@@ -109,8 +109,8 @@ plot_jail_props <- function(target_year) {
 ## Section 6  ---- 
 #----------------------------------------------------------------------------#
 # <a map shows potential patterns of inequality that vary geographically>
-# Your functions might go here ... <todo:  update comment>
-# See Canvas
+# plot county population vs white proportion in jail in a certain year
+
 #----------------------------------------------------------------------------#
 
 ## Load data frame ---- 
