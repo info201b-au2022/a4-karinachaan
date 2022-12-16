@@ -37,25 +37,25 @@ How much has my variable change over the last N years?]]]
 
 ```{r prison_growth_population, echo = FALSE}
 source("../source/analysis.R")
-plot(plot_jail_pop_for_us())
+print(plot_jail_pop_for_us())
 ```
 
 This chart exemplifies the increase of the jail population since 1970 until 2018. This graph highlights the consistent jail population from 1970 to 1980s, under 200,000, then a sustained approximate 200,000 increase every decade until around 2010 where there was a 100,000 decrease from a cumulative 750,000 population -- the first decrease between 1970 to 2009. 
 
 ## Growth of Prison Population by State
 
-<!-- ```{r growth_population_bystate, echo = FALSE}  -->
-<!-- source("") -->
-<!-- plot(type_of_chart) -->
-<!-- ``` -->
+```{r growth_population_bystate, echo = FALSE}
+# source("../source/analysis.R")
+print(plot_jail_pop_by_states(c("WA","OR","CA")))
+```
 
 
 ## Incarceration population trend over time
 
-<!-- ```{r 1, echo = FALSE} -->
-<!-- source("") -->
-<!-- plot(type_of_chart) -->
-<!-- ``` -->
+```{r 1, echo = FALSE}
+# source("")
+print(plot_jail_props(2015)) # (choose your year to plot)
+```
 
 
 
