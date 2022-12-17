@@ -54,11 +54,11 @@ print(plot_jail_props(2015)) # (choose your year to plot)
 In this chart, this shows the number of white individuals within the population versus the proportion in jail. The overall a population is more white-dominated, yet there’s still a disproportionate number of minorities in jail. 
 
 
-## Incarceration population by race in King County
+## Incarceration population by race in the U.S. 
 
-<!-- ```{r incarceration_pop_byrace_KingCounty, echo = FALSE} -->
-<!-- # source("") -->
-<!-- print(plot_jail_props(2021)) -->
-<!-- ``` -->
+```{r incarceration_by_race_in_US, echo = FALSE}
+# source("")
+print(plot_jail_prop_on_map(2012))
+```
 
-
+In this map, this shows the proportion of white prison population and the proportional difference relative to other communities. There is a largest difference in population in the west coast and east coast states such as California, Oregon, Washingotn, New York, and Florida and gradually more white population as we near the middle of the U.S. This could be due to the overall population of largely populated states having more diverse range of communities, but I am still curious why the proportion of white population is greater within the middle states in comparison to the other states near the edges of the U.S. Overall, the darker shaded states show a disproportionate amount of other identities in comparison to the white population, showing inequity in a majority of the states. Minority ethnicities still are disproportionately affected and incarcerated at a higher rate than their white counterparts. 

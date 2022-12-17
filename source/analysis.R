@@ -2,6 +2,7 @@ library(tidyverse)
 # library(tidyr)
 # library(dplyr)
 library(reshape2)
+library(usmap)
 
 # The functions might be useful for A4
 source("../source/a4-helpers.R")
@@ -110,7 +111,41 @@ plot_jail_props <- function(target_year) {
 #----------------------------------------------------------------------------#
 # <a map shows potential patterns of inequality that vary geographically>
 # plot county population vs white proportion in jail in a certain year
+get_jail_prop_by_state <- function(target_year) {
+  df <- get_data()
+  df_year <- df[df$year==target_year,]
+  
+  # replace na on county-level with 0 
+  df_year[is.na(df_year$total_pop_15to64),] <- 0
+  df_year[is.na(df_year$white_pop_15to64),] <- 0
+  df_year[is.na(df_year$total_jail_pop),] <- 0
+  df_year[is.na(df_year$white_jail_pop),] <- 0
+  
+  df_year_agg <- aggregate(x=cbind(df_year$total_pop_15to64, df_year$white_pop_15to64, 
+                                   df_year$total_jail_pop, df_year$white_jail_pop), 
+                           by=list(df_year$state), FUN=sum)
+  
+  # make empty df 
+  df_props <- data.frame(matrix(ncol=0, nrow=nrow(df_year_agg)))
+  
+  df_props$jail_prop_diff <- df_year_agg$V2 / df_year_agg$V1 -
+    df_year_agg$V4 / df_year_agg$V3
+  df_props$state <- df_year_agg$Group.1
+  
+  # remove NAs (first row is NA)
+  return(df_props %>% na.omit())
+}
 
+plot_jail_prop_on_map <- function(target_year) {
+  df_props = get_jail_prop_by_state(target_year)
+  
+  # plot on map
+  map <- plot_usmap(data=df_props, values="jail_prop_diff", color="red") + 
+    scale_fill_continuous(name="Proportion Difference", label=scales::comma) + 
+    theme(legend.position="right") + labs(title="White Proportion in Population - White Proportion in Jail")
+  
+  return(map)
+}
 #----------------------------------------------------------------------------#
 
 ## Load data frame ---- 
